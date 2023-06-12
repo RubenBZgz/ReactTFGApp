@@ -1,0 +1,34 @@
+
+
+.header {
+  background-color: #272727;
+}
+
+/* FOOTER */
+.footer {
+  background-color: #272727;
+  display: flex;
+  justify-content: center;
+}
+
+.globalFooter{
+  width: 65%;
+  display: flex;
+}
+
+.reviews {
+  object-fit: cover;
+  height: 20vh;
+}
+
+.footerDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.footerText {
+  color: white;
+  text-align: center;
+}

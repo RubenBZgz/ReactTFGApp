@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+/*
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+@font-face {
+  font-family: 'Prueba';
+  src: url(/src/fonts/Poppins-Medium.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Prueba2';
+  src: url(/src/fonts/Poppins-SemiBold.ttf) format('truetype');
+}*/
+
+.main-games{
+  background-color: #4F4F4F ;
+  display: flex;
+  justify-content: center
+}
+
+.main-titles{
+  background-color: #363636 ;
+  display: flex;
+  width: 65%;
+}
+
+.main-games .main-titles .main-tendencies{
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+  margin-top: 2vh;
+  margin-bottom: 4vh;
+  margin-left: 6vh;
+  margin-right: 6vh;
+}
+
+.main-card {
+  background-color: white;
+  display: flex;
+  margin-bottom: 1.5vh;
+}
+
+.main-card img{
+  height: 12vh;
+}
+
+.main-card h1 {
+  font-size: 3vh;
+  margin: 0;
+}
+.main-card p{
+  font-size: 3vh;
+  margin: 0;
+}
+
+.tendencies{
+  color: white;
+  font-size: 3.2vh;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 2vh;
+  margin-bottom: 4vh;
+}
+
+.main-card-image{
+  width: 100%;
+  height: 100%;
+}
+
+.main_image {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}

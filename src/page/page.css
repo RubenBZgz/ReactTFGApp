@@ -1,0 +1,61 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+@font-face {
+  font-family: 'Prueba';
+  src: url(/src/fonts/Poppins-Medium.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Prueba2';
+  src: url(/src/fonts/Poppins-SemiBold.ttf) format('truetype');
+}*/
+
+.principal_image {
+  /*width: 100vw;
+  height: 100vh;*/
+  width: 100%;
+  /*height: 100%;*/
+  height: 60vh;
+  margin: 0;
+  object-fit: cover;
+  display: block;
+}
+
+.main-games{
+  background-color: #4F4F4F ;
+  display: flex;
+  justify-content: center
+}
+
+.main-titles{
+  background-color: #363636 ;
+  /*display: flex;*/
+  width: 65%;
+}
+
+.main-titles2{
+  background-color: #363636 ;
+  width: 65%;
+}
+
+.main-games .main-titles .main-tendencies{
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
+  margin-left: 6vh;
+  margin-right: 6vh;
+}
+
+.tendencies{
+  color: white;
+  font-size: 3.2vh;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
+}
+
+
+.buttonSeeMore {
+  border: 2px solid black;
+}
