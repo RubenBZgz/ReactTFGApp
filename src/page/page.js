@@ -4,17 +4,20 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import styles from "./page.css";
 import globalStyles from "../global/globals.css";
 import principalImg from "../global/Hogwarts.jpg";
+//import dbOperation from "../dbFiles/dbOperationPrueba";
 
 //import Image from "next/image";
 //Components
 import Header from "../components/Header";
 import MainCard from "../components/MainCard";
+import MainCard2 from "../components/MainCard2";
 import Footer from "../components/Footer";
 
 //to="test1" spy={true} smooth={true} offset={50} duration={500}
 
 // React modules
 import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 
 export default function Page() {
   // Moverse en la pestaña
@@ -24,6 +27,30 @@ export default function Page() {
   const routeChangeMore = () => {
     let path = `more`;
     navigate(path);
+  };
+
+  const [videogame, setVideogame] = useState({
+    id: 0,
+    title: "",
+    image: "",
+    releaseDate: "",
+    officialPrice: 0,
+    keyPrice: 0,
+  });
+
+  const getAllVideogames = async () => {
+    console.log(videogame);
+    const newData = await fetch("/getAllVideogames", {
+      method: "GET", //POST, PUT, DELETE
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    }).then((res) => res.json());
+    console.log("DATOS");
+    console.log(newData);
+    //console.log(videogame["result"].length);
+    setVideogame(newData["result"]);
   };
 
   return (
@@ -91,6 +118,7 @@ export default function Page() {
                     Próximos lanzamientos
                   </h1>
                   <MainCard />
+                  <MainCard2 />
                   <div className="main-card" style={{ cursor: "pointer" }}>
                     <div>
                       <img src="https://img.gg.deals/81/51/25bfcb1f77f67aca6863df4273b4f4b55600_249xr143.jpg" />

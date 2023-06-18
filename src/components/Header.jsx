@@ -9,8 +9,6 @@ import { Link } from "react-scroll";
 import { useNavigate } from "react-router-dom";
 
 const MyComponent = () => {
-  // Moverse en la pestaña
-
   // Navegar entre pestañas
   let navigate = useNavigate();
   const routeChangeHome = () => {
@@ -36,14 +34,6 @@ const MyComponent = () => {
             Home
           </p>
         </div>
-
-        {/*<p
-          className="col m-0 p-0"
-          style={{ color: "white", cursor: "pointer", fontSize: "20px" }}
-          onClick={routeChangeHome}
-        >
-          Tendencias
-        </p> */}
         <Link
           to="tendencies"
           spy={true}

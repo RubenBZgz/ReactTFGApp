@@ -8,16 +8,61 @@ import styles from "./videogame.css";
 //Components
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Provider from "../components/Provider";
-import Provider2 from "../components/Provider2";
+import ProviderPrueba from "../components/ProviderPrueba";
 
 //to="test1" spy={true} smooth={true} offset={50} duration={500}
 
 // React modules
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+
+function providers(videogame) {
+  console.log("providers");
+  if (videogame) {
+    const options = [];
+    for (let i = 0; i < videogame.length; i++) {
+      options.push(
+        <ProviderPrueba
+          idProvider={videogame[i].idProvider}
+          videogameTitle={videogame[i].videogameTitle}
+          title={videogame[i].title}
+          image={videogame[i].image}
+          price={videogame[i].price}
+          link={videogame[i].link}
+        />
+      );
+    }
+    return options;
+  } else {
+    return null;
+  }
+}
 
 export default function Videogame() {
+  const { state } = useLocation();
+  const [videogame, setVideogame] = useState({});
+  console.log(state);
   // Moverse en la pestaña
+  const getVideogame = async () => {
+    console.log("estoy");
+    const newData = await fetch(
+      `/getVideogameProviders?videogameTitle=${state.title}`,
+      {
+        method: "GET", //POST, PUT, DELETE
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    ).then((res) => res.json());
+    console.log("resultado");
+    console.log(newData["result"]);
+    setVideogame(newData["result"]);
+  };
+
+  useEffect(() => {
+    getVideogame();
+  }, []);
 
   // Navegar entre pestañas
 
@@ -33,11 +78,12 @@ export default function Videogame() {
           <div className="row m-5 p-5 d-flex justify-content-center">
             <div className="col-8 " style={{ backgroundColor: "white" }}>
               <div className="cardGame d-flex flex-direction-row">
-                <img src="https://img.gg.deals/9b/75/151098779ccb080d94ee39feeb25e83d1d2d_307xr176.jpg" />
+                {/*<img src="https://img.gg.deals/9b/75/151098779ccb080d94ee39feeb25e83d1d2d_307xr176.jpg" />*/}
+                <img style={{ height: "12vw" }} src={state["image"]} />
                 <div className="col px-5">
                   <div className="row mb-2">
                     <h1 className="" style={{ fontSize: "2vw" }}>
-                      Diablo IV
+                      {state["title"]}
                     </h1>
                   </div>
 
@@ -71,9 +117,7 @@ export default function Videogame() {
           </div>
         </div>
 
-        <Provider />
-        <Provider2 />
-
+        {videogame && providers(videogame)}
         {/*FOOTER*/}
         <Footer />
       </div>

@@ -13,6 +13,10 @@
   .main-card h1 {
     font-size: 3vh;
     margin: 0;
+    width: 15vw;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
   }
   .main-card p{
     font-size: 3vh;
