@@ -2,27 +2,30 @@ import React from "react";
 import styles from "./MainCard.css";
 import { useNavigate } from "react-router-dom";
 
-const MyComponent = () => {
+// IGUAL LA SOLUCIÓN ES HACERLO COMO SI FUERA UNA PÁGINA WEB CON EL FUNCTION
+function MyComponent(props) {
   let navigate = useNavigate();
   const routeChangeVideogame = () => {
     let path = `videogame`;
-    navigate(path);
+    navigate(path, {
+      state: props,
+    });
   };
   return (
     <div
-      className="main-card"
+      className="main-card "
       onClick={routeChangeVideogame}
       style={{ cursor: "pointer" }}
     >
       <div>
-        <img src="https://img.gg.deals/9b/75/151098779ccb080d94ee39feeb25e83d1d2d_249xr143.jpg" />
+        <img src={props.image} alt={props.title} />
       </div>
       <div className="m-3">
-        <h1>Diablo IV</h1>
-        <p>66.99€</p>
+        <h1 className=" ">{props.title}</h1>
+        <p>{props.officialPrice}€</p>
       </div>
     </div>
   );
-};
+}
 
 export default MyComponent;
