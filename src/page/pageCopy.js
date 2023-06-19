@@ -65,7 +65,7 @@ export default function Page() {
 
   // FUNCIONA A LA PERFECCIÓN
   const getAllVideogames = async () => {
-    console.log(videogame);
+    console.log("getAllVideogames");
     const newData = await fetch("/getAllVideogames", {
       method: "GET", //POST, PUT, DELETE
       headers: {

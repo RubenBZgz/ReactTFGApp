@@ -17,6 +17,7 @@ let session;
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(cors());
+app.use(express.static("/"));
 
 // GET
 app.get("/getAllVideogames", async (req, res) => {

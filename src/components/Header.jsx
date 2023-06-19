@@ -33,6 +33,27 @@ const MyComponent = () => {
           >
             Home
           </p>
+          <p
+            className="m-0 p-0"
+            style={{ color: "white", cursor: "pointer", fontSize: "20px" }}
+            onClick={routeChangeHome}
+          >
+            Prueba
+          </p>
+          <p
+            className="m-0 p-0"
+            style={{ color: "white", cursor: "pointer", fontSize: "20px" }}
+            onClick={routeChangeHome}
+          >
+            Charla
+          </p>
+          <p
+            className="m-0 p-0"
+            style={{ color: "white", cursor: "pointer", fontSize: "20px" }}
+            onClick={routeChangeHome}
+          >
+            Meet
+          </p>
         </div>
         <Link
           to="tendencies"
